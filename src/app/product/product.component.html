@@ -5,11 +5,11 @@
   </div>
 </ng-template>
 <div class="mb-3">
-  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input type="email" class="form-control" id="productName" placeholder="Arama metnini giriniz">
   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 </div>
 <div class="row">
-  <div *ngFor="let item of products" class="card" style="width: 18rem;">
+  <div *ngFor="let item of products | productFilter:filterText" class="card" style="width: 18rem;">
     <div class="card-body">
       <img [src]="item.imageUrl" class="card-img-top" alt="{{item.name}}">
       <h5 class="card-title">{{item.name | uppercase}} {{item.price| currency:"TRY":"TL":""}} </h5>
