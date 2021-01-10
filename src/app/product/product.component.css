@@ -1,0 +1,5 @@
+.card{
+  display: flex;
+  flex-direction: columun-reverse;
+  margin:1%;
+}

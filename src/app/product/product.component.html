@@ -1,0 +1,21 @@
+<h3 *ngIf="products; else:noProducts">{{title}}</h3>
+<ng-template #noProducts>
+  <div class="alert alert-danger" role="alert">
+    {{emptyProducts}}
+  </div>
+</ng-template>
+<div class="mb-3">
+  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+</div>
+<div class="row">
+  <div *ngFor="let item of products" class="card" style="width: 18rem;">
+    <div class="card-body">
+      <img [src]="item.imageUrl" class="card-img-top" alt="{{item.name}}">
+      <h5 class="card-title">{{item.name | uppercase}} {{item.price| currency:"TRY":"TL":""}} </h5>
+      <p class="card-text">{{item.description}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+</div>
