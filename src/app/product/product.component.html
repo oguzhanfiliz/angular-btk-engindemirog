@@ -5,16 +5,20 @@
   </div>
 </ng-template>
 <div class="mb-3">
-  <input type="email" class="form-control" id="productName" placeholder="Arama metnini giriniz">
-  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  <input  [(ngModel)]="filterText" class="form-control" id="productName" placeholder="Arama metnini giriniz">
+  <div id="text" class="form-text" *ngIf="filterText;else:noText">Şuan <span>{{filterText}} aradınız</span></div>
 </div>
+
+<ng-template #noText>
+
+</ng-template>
 <div class="row">
   <div *ngFor="let item of products | productFilter:filterText" class="card" style="width: 18rem;">
     <div class="card-body">
       <img [src]="item.imageUrl" class="card-img-top" alt="{{item.name}}">
       <h5 class="card-title">{{item.name | uppercase}} {{item.price| currency:"TRY":"TL":""}} </h5>
       <p class="card-text">{{item.description}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a (click)="addToCart(item)" class="btn btn-primary">Sepete Ekle</a>
     </div>
   </div>
 
