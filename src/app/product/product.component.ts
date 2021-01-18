@@ -1,99 +1,37 @@
-  import {
-    Component,
-    OnInit
-  } from '@angular/core';
-  import { Product } from './product';
-  import {AlertifyService} from '../services/alertify.service';
-  @Component({
-    selector: 'app-product',
-    templateUrl: './product.component.html',
-    styleUrls: ['./product.component.css']
-  })
-  export class ProductComponent implements OnInit {
+import { Component, OnInit } from '@angular/core';
+import { Product } from './product';
+import { AlertifyService } from '../services/alertify.service';
+import { ProductService } from '../services/product.service';
+import { ActivatedRoute } from '@angular/router';
+@Component({
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css'],
+  providers:[ProductService]
+})
+export class ProductComponent implements OnInit {
 
-    constructor(private alertifyService:AlertifyService) {}
-    title = "Ürün Listesi"
-    filterText=""
-    products: Product[] = [{
-        id: 1,
-        name: "Laptop",
-        price: 15,
-        categoryId: 1,
-        description: "Asus Zenbook",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 2,
-        name: "Mouse",
-        price: 25,
-        categoryId: 2,
-        description: "A4Tech",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 1,
-        name: "Laptop",
-        price: 15,
-        categoryId: 1,
-        description: "Asus Zenbook",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 2,
-        name: "Mouse",
-        price: 25,
-        categoryId: 2,
-        description: "A4Tech",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 1,
-        name: "Laptop",
-        price: 15,
-        categoryId: 1,
-        description: "Asus Zenbook",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 2,
-        name: "Mouse",
-        price: 25,
-        categoryId: 2,
-        description: "A4Tech",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 1,
-        name: "Laptop",
-        price: 15,
-        categoryId: 1,
-        description: "Asus Zenbook",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 2,
-        name: "Mouse",
-        price: 25,
-        categoryId: 2,
-        description: "A4Tech",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 1,
-        name: "Laptop",
-        price: 15,
-        categoryId: 1,
-        description: "Asus Zenbook",
-        imageUrl: "https://picsum.photos/200/100"
-      }, {
-        id: 2,
-        name: "Mouse",
-        price: 25,
-        categoryId: 2,
-        description: "A4Tech",
-        imageUrl: "https://picsum.photos/200/100"
-      },
+  constructor(
+    private alertifyService: AlertifyService,
+    private productService:ProductService,
+    private activatedRoute: ActivatedRoute
+    ) { }
+  title = "Ürün Listesi"
+  filterText = ""
+  products: Product[]=[];
+  emptyProducts = "Ürün Listesi boş"
 
-    ];
-    emptyProducts = "Ürün Listesi boş"
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params=>{
+      this.productService.getProducts(params["categoryId"]).subscribe(data=>{
+        this.products=data
+      });
+    })
+   }
 
-    ngOnInit(): void {}
-
-    addToCart(product:any){
-      this.alertifyService.success(product.name+" added");
-    }
-
-
+  addToCart(product: any) {
+    this.alertifyService.success(product.name + " added");
   }
+
+
+}
