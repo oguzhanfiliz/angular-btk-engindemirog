@@ -12,21 +12,15 @@ export class ProductService {
   path = "http://localhost:3000/products"
 
   getProducts(categoryId:any):Observable<Product[]> {
-    if(categoryId!==undefined){
-      alert(categoryId)
-    return this.http.get<Product[]>(this.path+"?categoryId="+categoryId).pipe(
+    let newPath = this.path;
+    if(categoryId){
+      newPath +="?categoryid="+categoryId;
+    }
+    return this.http.get<Product[]>(newPath).pipe(
       tap(data=>console.log(JSON.stringify(data))),
       catchError(this.handleError)
 
     )
-  }else{
-    alert(categoryId)
-    return this.http.get<Product[]>(this.path).pipe(
-      tap(data=>console.log(JSON.stringify(data))),
-      catchError(this.handleError)
-
-    )
-  }
 
   }
   handleError(err: HttpErrorResponse) {
