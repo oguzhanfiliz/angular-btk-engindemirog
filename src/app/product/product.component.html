@@ -1,4 +1,5 @@
-<h3 *ngIf="products; else:noProducts">{{title}}</h3>
+<!-- <h3 *ngIf="products; else:noProducts">{{title}}</h3> -->
+<app-category></app-category>
 <ng-template #noProducts>
   <div class="alert alert-danger" role="alert">
     {{emptyProducts}}
@@ -13,7 +14,7 @@
 
 </ng-template>
 <div class="row">
-  <div *ngFor="let item of products | productFilter:filterText" class="card" style="width: 18rem;">
+  <div *ngFor="let item of products | productFilter:filterText" class="card product-box" style="width: 18rem;">
     <div class="card-body">
       <img [src]="item.imageUrl" class="card-img-top" alt="{{item.name}}">
       <h5 class="card-title">{{item.name | uppercase}} {{item.price| currency:"TRY":"TL":""}} </h5>
@@ -21,5 +22,4 @@
       <a (click)="addToCart(item)" class="btn btn-primary">Sepete Ekle</a>
     </div>
   </div>
-
 </div>

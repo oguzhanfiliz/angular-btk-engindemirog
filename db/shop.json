@@ -1,0 +1,119 @@
+{
+  "products": [{
+      "id": 1,
+      "name": "Laptop",
+      "price": 15,
+      "categoryid": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 1,
+      "name": "Laptop",
+      "price": 15,
+      "categoryid": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 1,
+      "name": "Laptop",
+      "price": 15,
+      "categoryid": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 1,
+      "name": "Laptop",
+      "price": 15,
+      "categoryid": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 1,
+      "name": "Laptop",
+      "price": 15,
+      "categoryid": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 1,
+      "name": "Laptop",
+      "price": 15,
+      "categoryid": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 1,
+      "name": "Laptop",
+      "price": 15,
+      "categoryid": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://picsum.photos/200/100"
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "price": 25,
+      "categoryid": 2,
+      "description": "A4 Tech",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 2,
+      "name": "Mouse",
+      "price": 25,
+      "categoryid": 2,
+      "description": "A4 Tech",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 2,
+      "name": "Mouse",
+      "price": 25,
+      "categoryid": 2,
+      "description": "A4 Tech",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 2,
+      "name": "Mouse",
+      "price": 25,
+      "categoryid": 2,
+      "description": "A4 Tech",
+      "imageUrl": "https://picsum.photos/200/100"
+    }
+    ,{
+      "id": 2,
+      "name": "abc",
+      "price": 25,
+      "categoryid": 2,
+      "description": "A4 Tech",
+      "imageUrl": "https://picsum.photos/200/100"
+    }
+    ,{
+      "id": 2,
+      "name": "Mouse",
+      "price": 25,
+      "categoryid": 2,
+      "description": "A4 Tech",
+      "imageUrl": "https://picsum.photos/200/100"
+    },{
+      "id": 2,
+      "name": "Mouse",
+      "price": 25,
+      "categoryid": 2,
+      "description": "A4 Tech",
+      "imageUrl": "https://picsum.photos/200/100"
+    }
+
+  ],
+  "categories": [{
+    "id": 1,
+    "name": "Bilgisayar"
+  }, {
+    "id": 2,
+    "name": "Elektronik"
+  }],
+  "login": [{
+    "id": 1,
+    "username": "admin@gmail.com",
+    "password" : "1"
+  }]
+
+}
