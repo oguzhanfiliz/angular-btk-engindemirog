@@ -1,0 +1,31 @@
+<h3>Yeni ürün ekle - Reactive</h3>
+
+<form [formGroup]="productAddForm" (ngSubmit)="add()"  >,
+  <div class="form-group">
+    <input type="text" id="name" name="name" formControlName="name" class="form-control" placeholder="Ürün adı">
+    <div class="alert alert-danger" *ngIf="productAddForm.controls['price'].errors?.required && productAddForm.controls['price'].errors?.dirty">Ürün adı zorunludur.</div>
+
+  </div>
+  <div class="form-group">
+    <input type="text" id="description" name="description" formControlName="description" class="form-control" placeholder="Açıklama">
+    <div class="alert alert-danger" *ngIf="productAddForm.controls['price'].errors?.required && productAddForm.controls['price'].errors?.dirty">Açıklama zorunludur.</div>
+
+  </div >
+  <div class="form-group">
+    <input type="text" id="imageUrl" name="imageUrl" formControlName="imageUrl" class="form-control" placeholder="Resim adresi">
+    <div class="alert alert-danger" *ngIf="productAddForm.controls['price'].errors?.required && productAddForm.controls['price'].errors?.dirty">Resim zorunludur.</div>
+
+  </div>
+  <div class="form-group">
+    <input type="text" id="price" name="price" formControlName="price" class="form-control" placeholder="Fiyatı">
+    <div class="alert alert-danger" *ngIf="productAddForm.controls['price'].errors?.required && productAddForm.controls['price'].errors?.dirty">Fiyatı zorunludur.</div>
+
+  </div>
+  <div class="form-group">
+    <select  formControlName="categoryId" required id="categoryId" name="categoryId" class="form-control">
+      <option *ngFor="let category of categories" [value]="category.id" >{{category.name}}</option>
+    </select>
+    <div *ngIf="productAddForm.controls['price'].errors?.required && productAddForm.controls['price'].errors?.touched" class="alert alert-danger">Kategori seçiniz</div>
+  </div>
+<button [disabled]="productAddForm.invalid" type="submit" class="btn btn-primary">Ürün Ekle</button>
+</form>
