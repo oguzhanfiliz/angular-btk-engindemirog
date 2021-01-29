@@ -1,17 +1,19 @@
-<form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="form-signin" >
-  <div class="text-center mb-4">
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="form-signin">
 
+  <div class="text-center mb-4">
     <h1 class="h3 mb-3 font-weight-normal">Giriş yap</h1>
     <p>Sana 3 hak vericem şimdi yoksa gidersin!.</p>
   </div>
 
   <div class="form-label-group">
-    <input type="text"  #userName="ngModel" [(ngModel)]="model.userName" id="inputEmail" name = "userName" class="form-control" placeholder="Kullanıcı Adı" required autofocus>
+    <input type="text" #userName="ngModel" [(ngModel)]="model.userName" id="inputEmail" name="userName"
+      class="form-control" placeholder="Kullanıcı Adı" required autofocus>
     <label for="inputEmail">Kullanıcı adı </label>
   </div>
 
   <div class="form-label-group">
-    <input type="password"  #password="ngModel" [(ngModel)]="model.password" id="password" name = "password" class="form-control" placeholder="Şifre" required>
+    <input type="password" #password="ngModel" [(ngModel)]="model.password" id="password" name="password"
+      class="form-control" placeholder="Şifre" required>
     <label for="inputPassword">Şifre</label>
   </div>
 

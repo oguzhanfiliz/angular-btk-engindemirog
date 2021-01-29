@@ -9,11 +9,11 @@ import { User } from './user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  model:User=new User();
-  constructor(private accountService:AccountService) {}
+  model: User = new User();
+  constructor(private accountService: AccountService) { }
   ngOnInit(): void { }
   scopedate = new Date();//date component use pipe
-  login(form:NgForm){
+  login(form: NgForm) {
     this.accountService.login(this.model);
     console.log(this.model.userName);
     console.log(this.model.password);

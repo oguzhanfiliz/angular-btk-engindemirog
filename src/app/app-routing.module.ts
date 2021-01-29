@@ -9,12 +9,12 @@ import { ProductAddForms2Component } from './product/product-add-forms2/product-
 import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
-  {path:'products',component : ProductComponent},
+  {path:'products',component : ProductComponent,canActivate:[LoginGuard]},
   {path:'product-add-1',component : ProductAddForms1Component,canActivate:[LoginGuard]},
-  {path:'product-add-2',component : ProductAddForms2Component},
+  {path:'product-add-2',component : ProductAddForms2Component,canActivate:[LoginGuard]},
   {path:'login',component : LoginComponent},
-  {path:'',redirectTo:'products',pathMatch:'full'},
-  {path:'products/category/:categoryId',component : ProductComponent}
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'products/category/:categoryId',component : ProductComponent,canActivate:[LoginGuard]}
 
 ];
 
