@@ -1,25 +1,33 @@
 <!-- <h3 *ngIf="products; else:noProducts">{{title}}</h3> -->
 <app-category></app-category>
-<ng-template #noProducts>
-  <div class="alert alert-danger" role="alert">
-    {{emptyProducts}}
-  </div>
-</ng-template>
-<div class="mb-3">
-  <input  [(ngModel)]="filterText" class="form-control" id="productName" placeholder="Arama metnini giriniz">
-  <div id="text" class="form-text" *ngIf="filterText;else:noText">Şuan <span>{{filterText}} aradınız</span></div>
-</div>
+<div class="container-fluid">
+  <div class="row">
 
-<ng-template #noText>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
-</ng-template>
-<div class="row">
-  <div *ngFor="let item of products | productFilter:filterText" class="card product-box" style="width: 18rem;">
-    <div class="card-body">
-      <img [src]="item.imageUrl" class="card-img-top" alt="{{item.name}}">
-      <h5 class="card-title">{{item.name | uppercase}} {{item.price| currency:"TRY":"TL":""}} </h5>
-      <p class="card-text">{{item.description}}</p>
-      <a (click)="addToCart(item)" class="btn btn-primary">Sepete Ekle</a>
-    </div>
+      <ng-template #noProducts>
+        <div class="alert alert-danger" role="alert">
+          {{emptyProducts}}
+        </div>
+      </ng-template>
+      <div class="mb-3">
+        <input [(ngModel)]="filterText" class="form-control" id="productName" placeholder="Arama metnini giriniz">
+        <div id="text" class="form-text" *ngIf="filterText;else:noText">Şuan <span>{{filterText}} aradınız</span></div>
+      </div>
+
+      <ng-template #noText>
+
+      </ng-template>
+      <div class="row">
+        <div *ngFor="let item of products | productFilter:filterText" class="card product-box" style="width: 18rem;">
+          <div class="card-body">
+            <img [src]="item.imageUrl" class="card-img-top" alt="{{item.name}}">
+            <h5 class="card-title">{{item.name | uppercase}} {{item.price| currency:"TRY":"TL":""}} </h5>
+            <p class="card-text">{{item.description}}</p>
+            <a (click)="addToCart(item)" class="btn btn-primary">Sepete Ekle</a>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </div>

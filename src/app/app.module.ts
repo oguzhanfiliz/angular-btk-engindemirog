@@ -14,8 +14,10 @@ import { ProductAddForms2Component } from './product/product-add-forms2/product-
 import { LoginComponent } from './login/login.component';
 import { AccountService } from './services/account.service';
 import { LoginGuard } from './login/login.guard';
+import { DragdropComponent } from './dragdrop/dragdrop.component';
+import { LeftsidebarComponent } from './leftsidebar/leftsidebar.component';
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NavComponent,
     CategoryComponent,
@@ -23,8 +25,10 @@ import { LoginGuard } from './login/login.guard';
     ProductFilterPipe,
     ProductAddForms1Component,
     ProductAddForms2Component,
-    LoginComponent
-  ],
+    LoginComponent,
+    DragdropComponent,
+      LeftsidebarComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

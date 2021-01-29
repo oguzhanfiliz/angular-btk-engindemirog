@@ -2,16 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AccountService } from '../services/account.service';
 
+
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  selector: 'app-leftsidebar',
+  templateUrl: './leftsidebar.component.html',
+  styleUrls: ['./leftsidebar.component.scss']
 })
-export class NavComponent implements OnInit {
+export class LeftsidebarComponent implements OnInit {
 
   constructor(private accountService:AccountService,private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
+
+  ngOnInit() {
   }
   isLoggedin(){
     return this.accountService.isLoggedIn();
@@ -19,4 +21,5 @@ export class NavComponent implements OnInit {
   logOut(){
     this.accountService.logOut();
   }
+
 }
